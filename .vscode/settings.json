@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.rmd": "markdown",
+        "string_view": "cpp",
+        "format": "cpp"
+    }
+}
