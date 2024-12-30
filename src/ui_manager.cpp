@@ -379,7 +379,7 @@ ui_manager_ncurses::list_memos(const todo_list& todoList)
 
     // Header: Todo List 개수, 유저 이름
     int max_x = getmaxx(header);
-    std::string_view title1 = "Viewing list: todoList.get_title()"sv;
+    std::string title1 = format("Viewing list: {}\n", todoList.get_title());
     std::string_view title2 = format("{} todos\n", todoList.get_todos().size());
     int start_x = (max_x - title1.length()) / 2;
     mvwprintw(header, 0, start_x, "%s", title1.data());
@@ -531,7 +531,7 @@ void ui_manager_ncurses::interact_memo(todo& memo)
 
     def_prog_mode();
     endwin();
-    
+
     // 2. edit memo with fork, exec with text editor
     pid_t pid = fork();
     if (pid == 0) { // pid == 0 => child process
