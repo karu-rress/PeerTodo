@@ -1,3 +1,6 @@
+# Settings
+.vscode/
+
 # Compiled source #
 *.o
 p2d
